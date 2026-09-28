@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: knowva-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: knowva
+      POSTGRES_USER: knowva
+      POSTGRES_PASSWORD: knowva_local_password
+    ports:
+      - "5433:5432"
+    volumes:
+      - knowva_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U knowva -d knowva"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  knowva_postgres_data:

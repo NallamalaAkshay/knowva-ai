@@ -1,0 +1,38 @@
+# OpenAI key and other secrets
+.env
+.env.*
+!.env.example
+
+# Python virtual environments
+.venv/
+.venv-*/
+venv/
+
+# Python temporary files
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Frontend dependencies and build
+frontend/node_modules/
+frontend/dist/
+node_modules/
+dist/
+
+# Local database and RAG data
+data/
+chroma/
+*.db
+*.sqlite3
+
+# macOS and VS Code files
+.DS_Store
+.vscode/
+
+# Log files
+*.log
+
+# Python build files
+build/
+*.egg-info/
